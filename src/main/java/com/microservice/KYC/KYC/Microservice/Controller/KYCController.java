@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class KYCController {
 
     @PostMapping
     @Operation(summary="create a new KYC Record")
-    public ResponseEntity<KYCRecordDTO> create(KYCRecordDTO dto)
+    public ResponseEntity<KYCRecordDTO> create(@RequestBody KYCRecordDTO dto)
     {
        KYCRecordDTO kycRecordDTO= kycService.createKYC(dto);
         return ResponseEntity.ok(kycRecordDTO);

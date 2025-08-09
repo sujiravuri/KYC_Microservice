@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface KYCMapper {
 
-        KYCRecordDTO toDto(KYCRecord record);
+    KYCRecordDTO toDto(KYCRecord record);
     KYCRecord toEntity(KYCRecordDTO dto);
 
 }
